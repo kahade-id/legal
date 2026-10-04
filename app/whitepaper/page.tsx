@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { DownloadSimple } from "@phosphor-icons/react/dist/ssr";
-import { Accordion, Button, Icon } from "@kahade/ui";
+import { Accordion } from "@kahade/ui";
 import { DocShell } from "@/components/DocShell";
+import { DownloadButton } from "@/components/DownloadButton";
 
 export const metadata = { title: "Whitepaper", description: "Dokumen resmi visi, model bisnis, dan rencana Kahade — 17 bab." };
 
@@ -32,11 +32,7 @@ export default function WhitepaperPage() {
       description="Dokumen resmi visi, model bisnis, dan rencana Kahade — versi 1.0, Oktober 2026, diterbitkan PT Kawal Hak Dengan Aman."
     >
       <div className="mb-8">
-        <a href="/Whitepaper-Kahade-v1.0.pdf" download>
-          <Button leftIcon={DownloadSimple}>
-            Unduh PDF (17 bab, 48 halaman)
-          </Button>
-        </a>
+        <DownloadButton />
         <p className="mt-3 text-sm text-neutral-500">
           Whitepaper adalah sumber kebenaran tunggal untuk semua produk dan
           bahasa Kahade.
