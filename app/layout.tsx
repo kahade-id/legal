@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -34,7 +34,6 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.svg",
   },
-  themeColor: "#ffffff",
   openGraph: {
     type: "website",
     locale: "id_ID",
@@ -43,6 +42,10 @@ export const metadata: Metadata = {
     description:
       "Syarat & ketentuan, kebijakan privasi, kebijakan transaksi, dan dokumen resmi PT Kawal Hak Dengan Aman.",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({
