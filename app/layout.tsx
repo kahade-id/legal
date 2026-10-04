@@ -6,6 +6,23 @@ import { SiteFooter } from "@/components/SiteFooter";
 const GOOGLE_FONTS_URL =
   "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap";
 
+const ORG_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "PT Kawal Hak Dengan Aman",
+  alternateName: "Kahade",
+  url: "https://kahade.id",
+  description:
+    "Kahade adalah aplikasi jual-beli pengguna ke pengguna yang tampilannya seperti media sosial.",
+  sameAs: [
+    "https://karir.kahade.id",
+    "https://bantuan.kahade.id",
+    "https://status.kahade.id",
+    "https://artikel.kahade.id",
+    "https://investor.kahade.id",
+  ],
+};
+
 export const metadata: Metadata = {
   title: {
     default: "Legalitas Kahade",
@@ -43,6 +60,10 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link href={GOOGLE_FONTS_URL} rel="stylesheet" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_JSON_LD) }}
+        />
       </head>
       <body className="flex min-h-screen flex-col">
         <SiteHeader />

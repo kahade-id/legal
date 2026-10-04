@@ -5,12 +5,12 @@ import { useState } from "react";
 import { List, X } from "@phosphor-icons/react/dist/ssr";
 import { Icon, Logo } from "@kahade/ui";
 
-const NAV = [
+const NAV: { href: string; label: string; external?: boolean }[] = [
   { href: "/tentang", label: "Tentang" },
   { href: "/privasi", label: "Privasi" },
   { href: "/syarat-ketentuan", label: "Syarat & Ketentuan" },
   { href: "/transaksi", label: "Transaksi" },
-  { href: "/bantuan", label: "Bantuan" },
+  { href: "https://bantuan.kahade.id", label: "Bantuan", external: true },
 ];
 
 export function SiteHeader() {
@@ -26,10 +26,10 @@ export function SiteHeader() {
         </Link>
         <nav className="hidden items-center gap-1 md:flex" aria-label="Navigasi utama">
           {NAV.map((item) =>
-            item.href === "/bantuan" ? (
+            item.external ? (
               <a
                 key={item.href}
-                href="https://bantuan.kahade.id"
+                href={item.href}
                 className="rounded-full px-3.5 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-black"
               >
                 {item.label}
@@ -61,10 +61,10 @@ export function SiteHeader() {
           aria-label="Navigasi seluler"
         >
           {NAV.map((item) =>
-            item.href === "/bantuan" ? (
+            item.external ? (
               <a
                 key={item.href}
-                href="https://bantuan.kahade.id"
+                href={item.href}
                 className="block rounded-xl px-3 py-2.5 text-[15px] font-medium text-neutral-700 hover:bg-neutral-100"
                 onClick={() => setOpen(false)}
               >

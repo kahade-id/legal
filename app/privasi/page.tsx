@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { DocShell } from "@/components/DocShell";
 
 export const metadata = { title: "Kebijakan Privasi", description: "Data apa yang dikumpulkan Kahade, untuk apa, dan hak Anda atas data tersebut (UU PDP)." };
@@ -44,18 +45,30 @@ export default function PrivasiPage() {
         <li><strong>Akses</strong> — meminta salinan data pribadi Anda.</li>
         <li><strong>Koreksi</strong> — memperbaiki data yang tidak akurat.</li>
         <li><strong>Penghapusan</strong> — meminta penghapusan data (dengan pengecualian kewajiban hukum, mis. catatan transaksi).</li>
-        <li><strong>Penarikan persetujuan</strong> — menarik persetujuan pemrosesan kapan saja.</li>
-        <li><strong>Pembatasan & keberatan</strong> — membatasi atau menolak pemrosesan tertentu.</li>
+        <li><strong>Portabilitas</strong> — menerima data Anda dalam format yang terstruktur dan umum digunakan, serta memindahkannya ke pengendali data lain bila memungkinkan secara teknis.</li>
+        <li><strong>Pembatasan & penundaan pemrosesan</strong> — meminta pemrosesan dihentikan sementara selama sengketa akurasi atau keberatan Anda ditinjau.</li>
+        <li><strong>Keberatan</strong> — menolak pemrosesan tertentu, termasuk untuk kepentingan pemasaran langsung (kami tidak melakukan pemasaran langsung berbasis data pribadi).</li>
+        <li><strong>Penarikan persetujuan</strong> — menarik persetujuan pemrosesan kapan saja; penarikan tidak mempengaruhi keabsahan pemrosesan sebelum penarikan.</li>
       </ul>
       <p>
-        Ajukan permintaan melalui halaman Kontak Legal/DPO. Kami akan
-        memverifikasi identitas Anda terlebih dahulu.
+        Ajukan permintaan melalui <Link href="/kontak">halaman Kontak Legal/DPO</Link>.
+        Kami akan memverifikasi identitas Anda terlebih dahulu dan merespons
+        maksimal 30 hari kalender sejak permintaan lengkap diterima.
       </p>
       <h2>5. Retensi data</h2>
       <p>
-        Data disimpan selama akun Anda aktif dan dihapus atau dianonimkan
-        setelah tidak lagi diperlukan, kecuali diwajibkan hukum untuk disimpan
-        lebih lama (mis. catatan transaksi untuk keperluan audit dan pajak).
+        Kami menyimpan data pribadi hanya selama diperlukan untuk tujuan di
+        atas, dengan jangka waktu sebagai berikut:
+      </p>
+      <ul>
+        <li><strong>Data akun</strong> — selama akun aktif; dihapus atau dianonimkan maksimal 90 hari setelah akun dihapus.</li>
+        <li><strong>Data transaksi</strong> — minimal 10 tahun sesuai ketentuan perpajakan dan audit yang berlaku.</li>
+        <li><strong>Log keamanan</strong> — maksimal 2 tahun untuk keperluan deteksi penipuan dan audit.</li>
+        <li><strong>Data pelamar kerja yang ditolak</strong> — dihapus otomatis maksimal 90 hari setelah keputusan (lihat Kebijakan Privasi Pelamar di karir.kahade.id).</li>
+      </ul>
+      <p>
+        Setelah masa retensi berakhir, data dihapus permanen atau dianonimkan
+        sehingga tidak dapat dikaitkan kembali dengan Anda.
       </p>
       <h2>6. Keamanan</h2>
       <ul>
