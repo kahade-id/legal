@@ -17,7 +17,7 @@ import {
 import { Card, Icon } from "@kahade/ui";
 
 export const metadata = {
-  title: { absolute: "Legalitas Kahade" },
+  title: { absolute: "Legalitas & Kebijakan — Kahade" },
   description:
     "Jelajahi seluruh dokumen resmi Kahade: kebijakan privasi, syarat & ketentuan, kebijakan transaksi, pedoman komunitas, brand guidelines, dan whitepaper.",
 };
@@ -120,7 +120,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div id="dokumen" className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {DOCS.map((doc) => (
           <Link key={doc.href} href={doc.href} className="group">
             <Card

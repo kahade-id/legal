@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
 import { Icon } from "@kahade/ui";
+import { DocBreadcrumb } from "@/components/DocBreadcrumb";
 
 interface DocShellProps {
   title: string;
@@ -15,6 +16,7 @@ interface DocShellProps {
 export function DocShell({ title, description, children }: DocShellProps) {
   return (
     <div className="mx-auto max-w-3xl px-5 py-12 md:py-16">
+      <DocBreadcrumb title={title} />
       <Link
         href="/"
         className="inline-flex items-center gap-1.5 text-sm font-medium text-neutral-500 transition-colors hover:text-black"

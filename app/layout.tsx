@@ -25,8 +25,8 @@ const ORG_JSON_LD = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Legalitas Kahade",
-    template: "%s — Legalitas Kahade",
+    default: "Legalitas & Kebijakan — Kahade",
+    template: "%s — Kahade",
   },
   description:
     "Pusat legalitas Kahade: syarat & ketentuan, kebijakan privasi, kebijakan transaksi, pedoman komunitas, dan dokumen resmi PT Kawal Hak Dengan Aman.",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
     siteName: "Legalitas Kahade",
-    title: "Legalitas Kahade",
+    title: "Legalitas & Kebijakan — Kahade",
     description:
       "Syarat & ketentuan, kebijakan privasi, kebijakan transaksi, dan dokumen resmi PT Kawal Hak Dengan Aman.",
   },
