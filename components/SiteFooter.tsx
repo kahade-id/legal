@@ -24,14 +24,17 @@ const GROUPS: { title: string; links: { href: string; label: string; external?: 
     title: "Lainnya",
     links: [
       { href: "https://kahade.id", label: "kahade.id", external: true },
-      { href: "https://karir.kahade.id", label: "Karier", external: true },
-      { href: "https://bantuan.kahade.id", label: "Pusat Bantuan", external: true },
+      { href: "https://karir.kahade.id", label: "Karir", external: true },
+      { href: "https://bantuan.kahade.id", label: "Bantuan", external: true },
       { href: "https://status.kahade.id", label: "Status Layanan", external: true },
+      { href: "https://investor.kahade.id", label: "Investor", external: true },
+      { href: "https://artikel.kahade.id", label: "Artikel", external: true },
     ],
   },
 ];
 
 export function SiteFooter() {
+  const year = new Date().getFullYear();
   return (
     <footer className="border-t border-neutral-100 bg-neutral-50">
       <div className="mx-auto max-w-5xl px-5 py-12">
@@ -83,7 +86,7 @@ export function SiteFooter() {
         </div>
         <div className="mt-10 border-t border-neutral-200 pt-6">
           <p className="text-xs text-neutral-400">
-            © 2026 PT Kawal Hak Dengan Aman. Dokumen di situs ini akan ditinjau
+            © {year} PT Kawal Hak Dengan Aman. Dokumen di situs ini akan ditinjau
             ulang oleh penasihat hukum sebelum peluncuran.
           </p>
         </div>
