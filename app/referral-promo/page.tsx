@@ -1,6 +1,6 @@
 import { DocShell } from "@/components/DocShell";
 
-export const metadata = { title: "Ketentuan Referral, Voucher & Promo" };
+export const metadata = { title: "Ketentuan Referral, Voucher & Promo", description: "Syarat dan ketentuan program referral, voucher, dan promo Kahade." };
 
 export default function ReferralPage() {
   return (
@@ -41,7 +41,14 @@ export default function ReferralPage() {
       <p>
         Keputusan Kahade atas kelayakan peserta dan pemberian hadiah bersifat
         final untuk penyelesaian di platform. Pertanyaan dapat diajukan
-        melalui Pusat Bantuan.
+        melalui{" "}
+        <a
+          href="https://bantuan.kahade.id"
+          className="font-semibold text-black underline underline-offset-2"
+        >
+          Pusat Bantuan
+        </a>
+        .
       </p>
     </DocShell>
   );

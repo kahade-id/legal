@@ -16,6 +16,12 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import { Card, Icon } from "@kahade/ui";
 
+export const metadata = {
+  title: { absolute: "Legalitas Kahade" },
+  description:
+    "Jelajahi seluruh dokumen resmi Kahade: kebijakan privasi, syarat & ketentuan, kebijakan transaksi, pedoman komunitas, brand guidelines, dan whitepaper.",
+};
+
 const DOCS: {
   href: string;
   icon: typeof FileText;

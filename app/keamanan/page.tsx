@@ -1,7 +1,7 @@
 import { DocShell } from "@/components/DocShell";
 import { Card, CopyButton } from "@kahade/ui";
 
-export const metadata = { title: "Kebijakan Keamanan" };
+export const metadata = { title: "Kebijakan Keamanan", description: "Komitmen keamanan Kahade: enkripsi, autentikasi berlapis, dan responsible disclosure." };
 
 export default function KeamananPage() {
   return (
@@ -46,7 +46,14 @@ export default function KeamananPage() {
         <li>Kami mengisolasi dampak dan mengamankan sistem terlebih dahulu.</li>
         <li>Pengguna yang terdampak diberi tahu melalui kanal resmi.</li>
         <li>Insiden yang diwajibkan peraturan dilaporkan ke otoritas terkait.</li>
-        <li>Hasil evaluasi dipublikasikan di halaman Status Layanan.</li>
+        <li>Hasil evaluasi dipublikasikan di{" "}
+          <a
+            href="https://status.kahade.id"
+            className="font-semibold text-black underline underline-offset-2"
+          >
+            halaman Status Layanan
+          </a>
+          .</li>
       </ol>
       <p>
         Kahade tidak akan pernah meminta password, OTP, atau PIN Anda melalui

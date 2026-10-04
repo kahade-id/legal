@@ -14,6 +14,14 @@ export const metadata: Metadata = {
   description:
     "Pusat legalitas Kahade: syarat & ketentuan, kebijakan privasi, kebijakan transaksi, pedoman komunitas, dan dokumen resmi PT Kawal Hak Dengan Aman.",
   metadataBase: new URL("https://legal.kahade.id"),
+  openGraph: {
+    type: "website",
+    locale: "id_ID",
+    siteName: "Legalitas Kahade",
+    title: "Legalitas Kahade",
+    description:
+      "Syarat & ketentuan, kebijakan privasi, kebijakan transaksi, dan dokumen resmi PT Kawal Hak Dengan Aman.",
+  },
 };
 
 export default function RootLayout({

@@ -3,7 +3,7 @@ import { DownloadSimple } from "@phosphor-icons/react/dist/ssr";
 import { Accordion, Button, Icon } from "@kahade/ui";
 import { DocShell } from "@/components/DocShell";
 
-export const metadata = { title: "Whitepaper" };
+export const metadata = { title: "Whitepaper", description: "Dokumen resmi visi, model bisnis, dan rencana Kahade — 17 bab." };
 
 const CHAPTERS: [string, string][] = [
   ["1. Ringkasan Eksekutif", "Gambaran Kahade: jual-beli P2P ala media sosial, model bisnis biaya 2,5% + Kahade Plus, target 1.000 pengguna pertama dan 1 juta transaksi dalam 6 bulan, serta kebutuhan pre-seed Rp100–500 juta."],
@@ -13,7 +13,7 @@ const CHAPTERS: [string, string][] = [
   ["5. Pengalaman Pengguna", "Alur dari scroll, like, komen, chat dengan penjual, hingga tombol “Beli via Kahade” — dirancang sebersih dan seintuitif mungkin."],
   ["6. Model Bisnis", "Biaya transaksi 2,5% (min Rp2.500, maks Rp250.000) dan langganan Kahade Plus Rp99.000/bulan atau Rp899.000/tahun dengan potongan 50% biaya dan kuota gratis Rp990.000."],
   ["7. Analisis Pasar", "Pasar social commerce Indonesia: jutaan anak muda sudah jual-beli via DM Instagram, X, dan WhatsApp setiap hari."],
-  ["8. Kompetitor & Positioning", "Dibandingkan TikTok Shop, Shopee, dan rekber manual — Kahade menempati celah C2C sosial yang belum dikuasai."],
+  ["8. Kompetitor & Positioning", "Dibandingkan TikTok Shop, Shopee, dan perantara manual komunitas — Kahade menempati celah C2C sosial yang belum dikuasai."],
   ["9. Keunggulan Kompetitif", "Network effect komunitas, kepercayaan organik, dan innovator dilemma: marketplace besar tak akan membunuh model katalognya sendiri."],
   ["10. Strategi Go-to-Market", "Launch ke komunitas (thrift, sneakers, K-pop merch, kampus); 1.000 transaksi pertama gratis biaya."],
   ["11. Traksi & Roadmap", "Produk sudah jadi dan siap launch 8 Desember 2026; roadmap menuju 1 juta transaksi dalam 6 bulan."],

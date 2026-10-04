@@ -1,6 +1,7 @@
 import { DocShell } from "@/components/DocShell";
+import { Table, THead, TBody, TR, TH, TD } from "@kahade/ui";
 
-export const metadata = { title: "Kebijakan Cookie" };
+export const metadata = { title: "Kebijakan Cookie", description: "Jenis cookie yang digunakan situs Kahade dan cara mengelolanya." };
 
 export default function CookiePage() {
   return (
@@ -16,32 +17,32 @@ export default function CookiePage() {
         situs kami.
       </p>
       <h2>2. Jenis cookie yang kami gunakan</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Jenis</th>
-            <th>Tujuan</th>
-            <th>Contoh</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Esensial</strong></td>
-            <td>Agar situs berfungsi (keamanan, preferensi bahasa).</td>
-            <td>Sesi, token CSRF</td>
-          </tr>
-          <tr>
-            <td><strong>Analitik</strong></td>
-            <td>Memahami kunjungan secara agregat dan anonim.</td>
-            <td>Statistik halaman</td>
-          </tr>
-          <tr>
-            <td><strong>Preferensi</strong></td>
-            <td>Menyimpan pilihan Anda.</td>
-            <td>Bahasa, tema</td>
-          </tr>
-        </tbody>
-      </table>
+      <Table>
+        <THead>
+          <TR>
+            <TH>Jenis</TH>
+            <TH>Tujuan</TH>
+            <TH>Contoh</TH>
+          </TR>
+        </THead>
+        <TBody>
+          <TR>
+            <TD><strong>Esensial</strong></TD>
+            <TD>Agar situs berfungsi (keamanan, preferensi bahasa).</TD>
+            <TD>Sesi, token CSRF</TD>
+          </TR>
+          <TR>
+            <TD><strong>Analitik</strong></TD>
+            <TD>Memahami kunjungan secara agregat dan anonim.</TD>
+            <TD>Statistik halaman</TD>
+          </TR>
+          <TR>
+            <TD><strong>Preferensi</strong></TD>
+            <TD>Menyimpan pilihan Anda.</TD>
+            <TD>Bahasa, tema</TD>
+          </TR>
+        </TBody>
+      </Table>
       <p>
         Kami <strong>tidak</strong> menggunakan cookie iklan pihak ketiga
         untuk pelacakan lintas situs.

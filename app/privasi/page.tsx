@@ -1,6 +1,6 @@
 import { DocShell } from "@/components/DocShell";
 
-export const metadata = { title: "Kebijakan Privasi" };
+export const metadata = { title: "Kebijakan Privasi", description: "Data apa yang dikumpulkan Kahade, untuk apa, dan hak Anda atas data tersebut (UU PDP)." };
 
 export default function PrivasiPage() {
   return (

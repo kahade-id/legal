@@ -1,11 +1,12 @@
 import { DocShell } from "@/components/DocShell";
+import { Table, TBody, TR, TH, TD } from "@kahade/ui";
 
-export const metadata = { title: "Tentang Kahade" };
+export const metadata = { title: "Tentang Kahade", description: "Profil PT Kawal Hak Dengan Aman dan fakta kunci tentang Kahade." };
 
 const FACTS: [string, string][] = [
   ["Badan hukum", "PT Kawal Hak Dengan Aman"],
   ["Legalitas", "NIB & NPWP terdaftar"],
-  ["Founder & CTO", "Muhammad Agung Kurniawan"],
+  ["Pendiri & CTO", "Muhammad Agung Kurniawan"],
   ["Model", "Aplikasi jual-beli pengguna ke pengguna"],
   ["Biaya transaksi", "2,5% (min Rp2.500, maks Rp250.000)"],
   ["Kahade Plus", "Rp99.000/bulan atau Rp899.000/tahun"],
@@ -42,21 +43,22 @@ export default function TentangPage() {
         keseruannya.
       </p>
       <h2>Fakta kunci</h2>
-      <table>
-        <tbody>
+      <Table>
+        <TBody>
           {FACTS.map(([k, v]) => (
-            <tr key={k}>
-              <th>{k}</th>
-              <td>{v}</td>
-            </tr>
+            <TR key={k}>
+              <TH scope="row" className="whitespace-nowrap">{k}</TH>
+              <TD>{v}</TD>
+            </TR>
           ))}
-        </tbody>
-      </table>
+        </TBody>
+      </Table>
       <h2>Pendiri</h2>
       <p>
-        Kahade didirikan oleh <strong>Muhammad Agung Kurniawan</strong>
-        (Chief Technology Officer), yang membangun seluruh sistem — backend,
-        aplikasi mobile iOS dan Android, panel admin, dan web — dari nol.
+        Kahade didirikan oleh <strong>Muhammad Agung Kurniawan</strong>{" "}
+        (Pendiri & Chief Technology Officer), yang membangun seluruh sistem
+        — backend, aplikasi mobile iOS dan Android, panel admin, dan web —
+        dari nol.
       </p>
     </DocShell>
   );

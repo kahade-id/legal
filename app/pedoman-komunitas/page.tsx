@@ -1,6 +1,6 @@
 import { DocShell } from "@/components/DocShell";
 
-export const metadata = { title: "Pedoman Komunitas" };
+export const metadata = { title: "Pedoman Komunitas", description: "Etika komunitas Kahade: barang dan konten yang dilarang, serta sanksi pelanggaran." };
 
 export default function PedomanPage() {
   return (
