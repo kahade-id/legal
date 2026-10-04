@@ -17,6 +17,7 @@ export default function CookiePage() {
         situs kami.
       </p>
       <h2>2. Jenis cookie yang kami gunakan</h2>
+      <div className="overflow-x-auto">
       <Table>
         <THead>
           <TR>
@@ -43,6 +44,7 @@ export default function CookiePage() {
           </TR>
         </TBody>
       </Table>
+      </div>
       <p>
         Kami <strong>tidak</strong> menggunakan cookie iklan pihak ketiga
         untuk pelacakan lintas situs.

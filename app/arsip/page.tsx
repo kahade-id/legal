@@ -19,6 +19,7 @@ export default function ArsipPage() {
       title="Arsip Perubahan Dokumen"
       description="Riwayat versi seluruh dokumen legal Kahade. Transparansi perubahan adalah bagian dari komitmen kami."
     >
+      <div className="overflow-x-auto">
       <Table>
         <THead>
           <TR>
@@ -43,6 +44,7 @@ export default function ArsipPage() {
           ))}
         </TBody>
       </Table>
+      </div>
       <h2>Kebijakan versi</h2>
       <ul>
         <li>Setiap perubahan material menambah nomor versi minor (1.1, 1.2).</li>

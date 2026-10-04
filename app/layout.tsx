@@ -11,15 +11,18 @@ const ORG_JSON_LD = {
   "@type": "Organization",
   name: "PT Kawal Hak Dengan Aman",
   alternateName: "Kahade",
-  url: "https://kahade.id",
+  url: "https://legal.kahade.id",
+  logo: "https://legal.kahade.id/favicon.svg",
   description:
     "Kahade adalah aplikasi jual-beli pengguna ke pengguna yang tampilannya seperti media sosial.",
   sameAs: [
+    "https://kahade.id",
     "https://karir.kahade.id",
+    "https://legal.kahade.id",
     "https://bantuan.kahade.id",
     "https://status.kahade.id",
-    "https://artikel.kahade.id",
     "https://investor.kahade.id",
+    "https://artikel.kahade.id",
   ],
 };
 

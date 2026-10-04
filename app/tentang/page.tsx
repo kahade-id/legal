@@ -43,6 +43,7 @@ export default function TentangPage() {
         keseruannya.
       </p>
       <h2>Fakta kunci</h2>
+      <div className="overflow-x-auto">
       <Table>
         <TBody>
           {FACTS.map(([k, v]) => (
@@ -53,6 +54,7 @@ export default function TentangPage() {
           ))}
         </TBody>
       </Table>
+      </div>
       <h2>Pendiri</h2>
       <p>
         Kahade didirikan oleh <strong>Muhammad Agung Kurniawan</strong>{" "}

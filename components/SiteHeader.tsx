@@ -47,7 +47,7 @@ export function SiteHeader() {
         </nav>
         <button
           type="button"
-          className="rounded-full p-2 text-black transition-colors hover:bg-neutral-100 md:hidden"
+          className="rounded-full p-3 text-black transition-colors hover:bg-neutral-100 md:hidden"
           onClick={() => setOpen((o) => !o)}
           aria-expanded={open}
           aria-label={open ? "Tutup menu" : "Buka menu"}
@@ -65,7 +65,7 @@ export function SiteHeader() {
               <a
                 key={item.href}
                 href={item.href}
-                className="block rounded-xl px-3 py-2.5 text-[15px] font-medium text-neutral-700 hover:bg-neutral-100"
+                className="block rounded-xl px-3 py-3 text-[15px] font-medium text-neutral-700 hover:bg-neutral-100"
                 onClick={() => setOpen(false)}
               >
                 {item.label}
@@ -74,7 +74,7 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="block rounded-xl px-3 py-2.5 text-[15px] font-medium text-neutral-700 hover:bg-neutral-100"
+                className="block rounded-xl px-3 py-3 text-[15px] font-medium text-neutral-700 hover:bg-neutral-100"
                 onClick={() => setOpen(false)}
               >
                 {item.label}
