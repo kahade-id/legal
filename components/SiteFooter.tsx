@@ -54,7 +54,7 @@ export function SiteFooter() {
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
             {GROUPS.map((group) => (
               <div key={group.title}>
-                <h3 className="text-xs font-bold uppercase tracking-wider text-neutral-400">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-neutral-500">
                   {group.title}
                 </h3>
                 <ul className="mt-3 space-y-2.5">
@@ -85,7 +85,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="mt-10 border-t border-neutral-200 pt-6">
-          <p className="text-xs text-neutral-400">
+          <p className="text-xs text-neutral-500">
             © {year} PT Kawal Hak Dengan Aman. Dokumen di situs ini akan ditinjau
             ulang oleh penasihat hukum sebelum peluncuran.
           </p>

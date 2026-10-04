@@ -1,6 +1,6 @@
 import { DocShell } from "@/components/DocShell";
 
-export const metadata = { title: "Ketentuan Referral, Voucher & Promo", description: "Syarat dan ketentuan program referral, voucher, dan promo Kahade." };
+export const metadata = { title: "Ketentuan Referral, Voucher & Promo", description: "Syarat dan ketentuan program referral, voucher, dan promo Kahade.", alternates: { canonical: "/referral-promo" } };
 
 export default function ReferralPage() {
   return (

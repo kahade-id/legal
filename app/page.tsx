@@ -20,6 +20,7 @@ export const metadata = {
   title: { absolute: "Legalitas & Kebijakan — Kahade" },
   description:
     "Jelajahi seluruh dokumen resmi Kahade: kebijakan privasi, syarat & ketentuan, kebijakan transaksi, pedoman komunitas, brand guidelines, dan whitepaper.",
+  alternates: { canonical: "/" },
 };
 
 const DOCS: {

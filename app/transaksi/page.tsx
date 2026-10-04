@@ -1,6 +1,6 @@
 import { DocShell } from "@/components/DocShell";
 
-export const metadata = { title: "Kebijakan Transaksi & Pengembalian Dana", description: "Biaya transaksi 2,5%, alur pembayaran via Kahade, refund, dan penyelesaian sengketa." };
+export const metadata = { title: "Kebijakan Transaksi & Pengembalian Dana", description: "Biaya transaksi 2,5%, alur pembayaran via Kahade, refund, dan penyelesaian sengketa.", alternates: { canonical: "/transaksi" } };
 
 export default function TransaksiPage() {
   return (

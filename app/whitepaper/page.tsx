@@ -3,7 +3,7 @@ import { Accordion } from "@kahade/ui";
 import { DocShell } from "@/components/DocShell";
 import { DownloadButton } from "@/components/DownloadButton";
 
-export const metadata = { title: "Whitepaper", description: "Dokumen resmi visi, model bisnis, dan rencana Kahade — 17 bab." };
+export const metadata = { title: "Whitepaper", description: "Dokumen resmi visi, model bisnis, dan rencana Kahade — 17 bab.", alternates: { canonical: "/whitepaper" } };
 
 const CHAPTERS: [string, string][] = [
   ["1. Ringkasan Eksekutif", "Gambaran Kahade: jual-beli P2P ala media sosial, model bisnis biaya 2,5% + Kahade Plus, target 1.000 pengguna pertama dan 1 juta transaksi dalam 6 bulan, serta kebutuhan pre-seed Rp100–500 juta."],

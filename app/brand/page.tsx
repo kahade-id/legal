@@ -1,7 +1,7 @@
 import { DocShell } from "@/components/DocShell";
 import { Card, Logo } from "@kahade/ui";
 
-export const metadata = { title: "Brand Guidelines", description: "Logo, warna, tipografi Plus Jakarta Sans, dan aturan penggunaan brand Kahade." };
+export const metadata = { title: "Brand Guidelines", description: "Logo, warna, tipografi Plus Jakarta Sans, dan aturan penggunaan brand Kahade.", alternates: { canonical: "/brand" } };
 
 const COLORS = [
   { hex: "#000000", name: "Hitam", usage: "Warna utama teks dan elemen." },

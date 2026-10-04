@@ -32,7 +32,7 @@ export function DocShell({ title, description, children }: DocShellProps) {
           {description}
         </p>
       )}
-      <p className="mt-4 text-xs font-medium uppercase tracking-wider text-neutral-400">
+      <p className="mt-4 text-xs font-medium uppercase tracking-wider text-neutral-500">
         Berlaku sejak 4 Oktober 2026 · Versi 1.0
       </p>
       <div className="prose-legal mt-10">{children}</div>

@@ -1,6 +1,6 @@
 import { DocShell } from "@/components/DocShell";
 
-export const metadata = { title: "Syarat & Ketentuan", description: "Aturan penggunaan aplikasi Kahade: hak, kewajiban, dan larangan pengguna." };
+export const metadata = { title: "Syarat & Ketentuan", description: "Aturan penggunaan aplikasi Kahade: hak, kewajiban, dan larangan pengguna.", alternates: { canonical: "/syarat-ketentuan" } };
 
 export default function SyaratPage() {
   return (

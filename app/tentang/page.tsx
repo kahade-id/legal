@@ -1,7 +1,7 @@
 import { DocShell } from "@/components/DocShell";
 import { Table, TBody, TR, TH, TD } from "@kahade/ui";
 
-export const metadata = { title: "Tentang Kahade", description: "Profil PT Kawal Hak Dengan Aman dan fakta kunci tentang Kahade." };
+export const metadata = { title: "Tentang Kahade", description: "Profil PT Kawal Hak Dengan Aman dan fakta kunci tentang Kahade.", alternates: { canonical: "/tentang" } };
 
 const FACTS: [string, string][] = [
   ["Badan hukum", "PT Kawal Hak Dengan Aman"],

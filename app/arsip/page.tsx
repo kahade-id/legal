@@ -1,7 +1,7 @@
 import { DocShell } from "@/components/DocShell";
 import { Table, THead, TBody, TR, TH, TD, Badge } from "@kahade/ui";
 
-export const metadata = { title: "Arsip Perubahan Dokumen", description: "Riwayat versi seluruh dokumen legal Kahade — transparan dan terdokumentasi." };
+export const metadata = { title: "Arsip Perubahan Dokumen", description: "Riwayat versi seluruh dokumen legal Kahade — transparan dan terdokumentasi.", alternates: { canonical: "/arsip" } };
 
 const HISTORY = [
   {

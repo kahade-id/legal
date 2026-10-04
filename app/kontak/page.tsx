@@ -2,7 +2,7 @@ import { DocShell } from "@/components/DocShell";
 import { Card, CopyButton, Icon } from "@kahade/ui";
 import { EnvelopeSimple, ShieldCheck } from "@phosphor-icons/react/dist/ssr";
 
-export const metadata = { title: "Kontak Legal / DPO", description: "Hubungi tim legal dan Petugas Perlindungan Data (DPO) Kahade." };
+export const metadata = { title: "Kontak Legal / DPO", description: "Hubungi tim legal dan Petugas Perlindungan Data (DPO) Kahade.", alternates: { canonical: "/kontak" } };
 
 export default function KontakPage() {
   return (

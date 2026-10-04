@@ -16,7 +16,7 @@ export default function NotFound() {
         <EmptyState
           icon={MagnifyingGlass}
           title="Halaman tidak ditemukan"
-          description="Alamat yang kamu tuju tidak ada atau sudah dipindahkan."
+          description="Alamat yang Anda tuju tidak ada atau sudah dipindahkan."
           action={<ButtonLink href="/">Kembali ke Legalitas</ButtonLink>}
         />
       </main>
