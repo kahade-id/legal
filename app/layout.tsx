@@ -72,8 +72,13 @@ export default function RootLayout({
         />
       </head>
       <body className="flex min-h-screen flex-col">
+        <a href="#konten-utama" className="skip-link">
+          Lewati ke konten utama
+        </a>
         <SiteHeader />
-        <main className="flex-1">{children}</main>
+        <main id="konten-utama" tabIndex={-1} className="flex-1">
+          {children}
+        </main>
         <SiteFooter />
       </body>
     </html>
