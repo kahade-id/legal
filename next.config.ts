@@ -18,6 +18,16 @@ const nextConfig: NextConfig = {
         source: '/:path*',
         headers: SECURITY_HEADERS,
       },
+      {
+        // Whitepaper PDF jarang berubah: cache 1 jam, revalidasi tiap waktu.
+        source: '/Whitepaper-Kahade-v1.0.pdf',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, must-revalidate',
+          },
+        ],
+      },
     ];
   },
 };
