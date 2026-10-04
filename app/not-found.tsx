@@ -1,6 +1,5 @@
-import Link from "next/link";
 import { MagnifyingGlass } from "@phosphor-icons/react/dist/ssr";
-import { Button, EmptyState, Logo } from "@kahade/ui";
+import { ButtonLink, EmptyState, Logo } from "@kahade/ui";
 
 export default function NotFound() {
   return (
@@ -18,11 +17,7 @@ export default function NotFound() {
           icon={MagnifyingGlass}
           title="Halaman tidak ditemukan"
           description="Alamat yang kamu tuju tidak ada atau sudah dipindahkan."
-          action={
-            <Link href="/">
-              <Button>Kembali ke Legalitas</Button>
-            </Link>
-          }
+          action={<ButtonLink href="/">Kembali ke Legalitas</ButtonLink>}
         />
       </main>
     </div>

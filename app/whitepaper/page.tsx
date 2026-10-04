@@ -47,7 +47,7 @@ export default function WhitepaperPage() {
         }))}
       />
       <p className="mt-8">
-        <Link href="/tentang" className="font-semibold text-black underline">
+        <Link href="/tentang">
           Baca juga: Tentang Kahade
         </Link>
       </p>

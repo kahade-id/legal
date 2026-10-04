@@ -42,10 +42,7 @@ export default function ReferralPage() {
         Keputusan Kahade atas kelayakan peserta dan pemberian hadiah bersifat
         final untuk penyelesaian di platform. Pertanyaan dapat diajukan
         melalui{" "}
-        <a
-          href="https://bantuan.kahade.id"
-          className="font-semibold text-black underline underline-offset-2"
-        >
+        <a href="https://bantuan.kahade.id">
           Pusat Bantuan
         </a>
         .

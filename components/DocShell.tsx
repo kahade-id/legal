@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
-import { Icon } from "@kahade/ui";
+import { Alert, Icon } from "@kahade/ui";
 import { DocBreadcrumb } from "@/components/DocBreadcrumb";
 
 interface DocShellProps {
@@ -36,13 +36,11 @@ export function DocShell({ title, description, children }: DocShellProps) {
         Berlaku sejak 4 Oktober 2026 · Versi 1.0
       </p>
       <div className="prose-legal mt-10">{children}</div>
-      <div className="mt-12 rounded-2xl border border-neutral-200 bg-neutral-50 px-5 py-4">
-        <p className="text-sm leading-relaxed text-neutral-500">
-          Dokumen ini akan ditinjau ulang oleh penasihat hukum sebelum
-          peluncuran. Bila ada perbedaan antara dokumen ini dan ketentuan di
-          dalam aplikasi Kahade, ketentuan di dalam aplikasi yang berlaku.
-        </p>
-      </div>
+      <Alert variant="info" className="mt-12">
+        Dokumen ini akan ditinjau ulang oleh penasihat hukum sebelum
+        peluncuran. Bila ada perbedaan antara dokumen ini dan ketentuan di
+        dalam aplikasi Kahade, ketentuan di dalam aplikasi yang berlaku.
+      </Alert>
     </div>
   );
 }

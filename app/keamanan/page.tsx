@@ -47,10 +47,7 @@ export default function KeamananPage() {
         <li>Pengguna yang terdampak diberi tahu melalui kanal resmi.</li>
         <li>Insiden yang diwajibkan peraturan dilaporkan ke otoritas terkait.</li>
         <li>Hasil evaluasi dipublikasikan di{" "}
-          <a
-            href="https://status.kahade.id"
-            className="font-semibold text-black underline underline-offset-2"
-          >
+          <a href="https://status.kahade.id">
             halaman Status Layanan
           </a>
           .</li>

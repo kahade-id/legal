@@ -11,7 +11,7 @@ export default function KontakPage() {
       description="Hubungi tim legal dan petugas perlindungan data (Data Protection Officer) Kahade."
     >
       <div className="grid gap-4">
-        <Card className="p-6">
+        <Card>
           <div className="flex items-center gap-3">
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-neutral-100">
               <Icon icon={EnvelopeSimple} size={22} />
@@ -30,7 +30,7 @@ export default function KontakPage() {
             <CopyButton text="legal@kahade.id" label="Salin email" />
           </div>
         </Card>
-        <Card className="p-6">
+        <Card>
           <div className="flex items-center gap-3">
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-neutral-100">
               <Icon icon={ShieldCheck} size={22} />
