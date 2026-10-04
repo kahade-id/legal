@@ -43,12 +43,12 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
+    // Judul & deskripsi OG TIDAK diset di sini: tiap halaman wajib mendefinisikan
+    // openGraph.title + openGraph.description sendiri di metadata-nya, agar tidak
+    // semua halaman mewarisi OG homepage (duplikat).
     type: "website",
     locale: "id_ID",
     siteName: "Legalitas Kahade",
-    title: "Legalitas & Kebijakan — Kahade",
-    description:
-      "Syarat & ketentuan, kebijakan privasi, kebijakan transaksi, dan dokumen resmi PT Kawal Hak Dengan Aman.",
   },
 };
 

@@ -1,7 +1,15 @@
 import { DocShell } from "@/components/DocShell";
 import { Table, THead, TBody, TR, TH, TD } from "@kahade/ui";
 
-export const metadata = { title: "Kebijakan Cookie", description: "Jenis cookie yang digunakan situs Kahade dan cara mengelolanya.", alternates: { canonical: "/cookie" } };
+export const metadata = {
+  title: "Kebijakan Cookie",
+  description: "Jenis cookie yang digunakan situs Kahade dan cara mengelolanya.",
+  alternates: { canonical: "/cookie" },
+  openGraph: {
+    title: "Kebijakan Cookie",
+    description: "Jenis cookie yang digunakan situs Kahade dan cara mengelolanya.",
+  },
+};
 
 export default function CookiePage() {
   return (

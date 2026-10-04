@@ -1,7 +1,15 @@
 import { DocShell } from "@/components/DocShell";
 import { Card, CopyButton } from "@kahade/ui";
 
-export const metadata = { title: "Kebijakan Keamanan", description: "Komitmen keamanan Kahade: enkripsi, autentikasi berlapis, dan responsible disclosure.", alternates: { canonical: "/keamanan" } };
+export const metadata = {
+  title: "Kebijakan Keamanan",
+  description: "Komitmen keamanan Kahade: enkripsi, autentikasi berlapis, dan responsible disclosure.",
+  alternates: { canonical: "/keamanan" },
+  openGraph: {
+    title: "Kebijakan Keamanan",
+    description: "Komitmen keamanan Kahade: enkripsi, autentikasi berlapis, dan responsible disclosure.",
+  },
+};
 
 export default function KeamananPage() {
   return (

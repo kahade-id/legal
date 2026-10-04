@@ -8,6 +8,7 @@ import {
   EnvelopeSimple,
   FileText,
   Handshake,
+  LockKey,
   Palette,
   Archive,
   ShieldCheck,
@@ -21,6 +22,11 @@ export const metadata = {
   description:
     "Jelajahi seluruh dokumen resmi Kahade: kebijakan privasi, syarat & ketentuan, kebijakan transaksi, pedoman komunitas, brand guidelines, dan whitepaper.",
   alternates: { canonical: "/" },
+  openGraph: {
+    title: "Legalitas & Kebijakan — Kahade",
+    description:
+      "Jelajahi seluruh dokumen resmi Kahade: kebijakan privasi, syarat & ketentuan, kebijakan transaksi, pedoman komunitas, brand guidelines, dan whitepaper.",
+  },
 };
 
 const DOCS: {
@@ -55,7 +61,7 @@ const DOCS: {
   },
   {
     href: "/privasi",
-    icon: ShieldCheck,
+    icon: LockKey,
     title: "Kebijakan Privasi",
     desc: "Data yang kami kumpulkan dan hak Anda atas data tersebut.",
   },
