@@ -1,46 +1,136 @@
+import {
+  Children,
+  cloneElement,
+  isValidElement,
+  type ReactElement,
+  type ReactNode,
+} from "react";
 import Link from "next/link";
-import type { ReactNode } from "react";
-import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
-import { Alert, Icon } from "@kahade/ui";
+import {
+  Alert,
+  Breadcrumb,
+  Container,
+  PageHeader,
+  Prose,
+  Section,
+  SectionHeader,
+  TextLink,
+  Toc,
+  type TocItem,
+} from "@kahade/ui";
 import { DocBreadcrumb } from "@/components/DocBreadcrumb";
+import { RelatedDocs } from "@/components/RelatedDocs";
+import { DOC_VERSION, EFFECTIVE_DATE } from "@/lib/docs";
 
 interface DocShellProps {
   title: string;
   description?: string;
+  /** Aksi di kepala dokumen (mis. unduh PDF). */
+  actions?: ReactNode;
   children: ReactNode;
 }
 
+function textOf(node: ReactNode): string {
+  if (typeof node === "string" || typeof node === "number") return String(node);
+  if (Array.isArray(node)) return node.map(textOf).join("");
+  if (isValidElement(node)) {
+    return textOf((node as ReactElement<{ children?: ReactNode }>).props.children);
+  }
+  return "";
+}
+
+function slugify(label: string): string {
+  return label
+    .toLowerCase()
+    .replace(/^\d+\.\s*/, "")
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/&/g, " dan ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 /**
- * Kerangka halaman dokumen legal: judul, garis versi, isi, catatan tinjauan hukum.
+ * Kerangka dokumen legal: kepala dokumen (judul, lede, tanggal berlaku,
+ * versi), daftar isi menempel dari setiap <h2>, isi dengan tipografi baca,
+ * catatan tinjauan hukum, lalu dokumen terkait.
  */
-export function DocShell({ title, description, children }: DocShellProps) {
+export function DocShell({ title, description, actions, children }: DocShellProps) {
+  const toc: TocItem[] = [];
+  const used = new Set<string>();
+  const content = Children.map(children, (child) => {
+    if (isValidElement(child) && child.type === "h2") {
+      const el = child as ReactElement<{ id?: string; children?: ReactNode }>;
+      const label = textOf(el.props.children);
+      let id = el.props.id ?? (slugify(label) || `bagian-${toc.length + 1}`);
+      while (used.has(id)) id = `${id}-${toc.length + 1}`;
+      used.add(id);
+      toc.push({ id, label });
+      return cloneElement(el, { id });
+    }
+    return child;
+  });
+
   return (
-    <div className="mx-auto max-w-3xl px-5 py-12 md:py-16">
+    <>
       <DocBreadcrumb title={title} />
-      <Link
-        href="/"
-        className="inline-flex items-center gap-1.5 text-sm font-medium text-neutral-500 transition-colors hover:text-black"
-      >
-        <Icon icon={ArrowLeft} size={16} />
-        Semua dokumen
-      </Link>
-      <h1 className="mt-6 text-3xl font-extrabold tracking-tight text-black md:text-4xl">
-        {title}
-      </h1>
-      {description && (
-        <p className="mt-3 text-[17px] leading-relaxed text-neutral-500">
-          {description}
-        </p>
-      )}
-      <p className="mt-4 text-xs font-medium uppercase tracking-wider text-neutral-500">
-        Berlaku sejak 4 Oktober 2026 · Versi 1.0
-      </p>
-      <div className="prose-legal mt-10">{children}</div>
-      <Alert variant="info" className="mt-12">
-        Dokumen ini akan ditinjau ulang oleh penasihat hukum sebelum
-        peluncuran. Bila ada perbedaan antara dokumen ini dan ketentuan di
-        dalam aplikasi Kahade, ketentuan di dalam aplikasi yang berlaku.
-      </Alert>
-    </div>
+      <PageHeader
+        size="h2"
+        breadcrumb={
+          <Breadcrumb items={[{ label: "Legal", href: "/" }, { label: title }]} />
+        }
+        title={title}
+        lede={description}
+        actions={actions}
+        meta={[
+          { label: "Berlaku sejak", value: EFFECTIVE_DATE },
+          { label: "Versi", value: DOC_VERSION },
+          { label: "Penyelenggara", value: "PT Kawal Hak Dengan Aman" },
+        ]}
+      />
+
+      <Container className="py-12 sm:py-16 lg:py-20">
+        <div className="lg:grid lg:grid-cols-12 lg:gap-12">
+          {toc.length > 1 && (
+            <aside className="hidden lg:col-span-3 lg:block">
+              <div className="sticky top-28 max-h-[calc(100dvh-8rem)] overflow-y-auto pb-4">
+                <Toc items={toc} />
+              </div>
+            </aside>
+          )}
+          <div
+            className={`min-w-0 ${toc.length > 1 ? "lg:col-span-8 lg:col-start-5" : "lg:col-span-8"}`}
+          >
+            {toc.length > 2 && (
+              <Toc items={toc} title="Daftar isi" variant="disclosure" className="mb-10 lg:hidden" />
+            )}
+            <Prose className="max-w-reading">{content}</Prose>
+            <Alert variant="info" title="Catatan tinjauan hukum" className="mt-14 max-w-reading">
+              Dokumen ini akan ditinjau ulang oleh penasihat hukum sebelum
+              peluncuran. Bila ada perbedaan antara dokumen ini dan ketentuan di
+              dalam aplikasi Kahade, ketentuan di dalam aplikasi yang berlaku.
+            </Alert>
+          </div>
+        </div>
+      </Container>
+
+      <Section tone="muted" divider>
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+          <div className="lg:col-span-4">
+            <SectionHeader
+              size="h3"
+              title="Dokumen terkait"
+              description="Ketentuan lain yang sering dibaca bersama dokumen ini."
+            />
+            <TextLink as={Link} href="/" className="mt-4">
+              Semua dokumen
+            </TextLink>
+          </div>
+          <div className="lg:col-span-8">
+            <RelatedDocs />
+          </div>
+        </div>
+      </Section>
+    </>
   );
 }

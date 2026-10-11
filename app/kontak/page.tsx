@@ -1,6 +1,18 @@
 import { DocShell } from "@/components/DocShell";
-import { Card, CopyButton, Icon } from "@kahade/ui";
-import { EnvelopeSimple, ShieldCheck } from "@phosphor-icons/react/dist/ssr";
+import { CopyButton } from "@kahade/ui";
+
+const CONTACTS = [
+  {
+    title: "Tim Legal",
+    desc: "Pertanyaan hukum, kerja sama, dan urusan perusahaan.",
+    email: "legal@kahade.id",
+  },
+  {
+    title: "Petugas Perlindungan Data (DPO)",
+    desc: "Permintaan akses, koreksi, penghapusan, dan penarikan persetujuan data pribadi (UU PDP No. 27/2022).",
+    email: "dpo@kahade.id",
+  },
+];
 
 export const metadata = {
   title: "Kontak Legal / DPO",
@@ -18,48 +30,22 @@ export default function KontakPage() {
       title="Kontak Legal / DPO"
       description="Hubungi tim legal dan petugas perlindungan data (Data Protection Officer) Kahade."
     >
-      <div className="grid gap-4">
-        <Card>
-          <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-neutral-100">
-              <Icon icon={EnvelopeSimple} size={22} />
-            </div>
-            <div>
-              <h2 className="!mb-0 !mt-0 text-lg font-bold">Tim Legal</h2>
-              <p className="!mb-0 text-sm text-neutral-500">
-                Pertanyaan hukum, kerja sama, dan urusan perusahaan.
-              </p>
-            </div>
-          </div>
-          <div className="mt-4 flex items-center gap-3">
-            <code className="rounded-lg bg-neutral-100 px-3 py-2 font-mono text-sm font-semibold text-black">
-              legal@kahade.id
-            </code>
-            <CopyButton text="legal@kahade.id" label="Salin email" />
-          </div>
-        </Card>
-        <Card>
-          <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-neutral-100">
-              <Icon icon={ShieldCheck} size={22} />
-            </div>
-            <div>
-              <h2 className="!mb-0 !mt-0 text-lg font-bold">
-                Petugas Perlindungan Data (DPO)
-              </h2>
-              <p className="!mb-0 text-sm text-neutral-500">
-                Permintaan akses, koreksi, penghapusan, dan penarikan
-                persetujuan data pribadi (UU PDP No. 27/2022).
-              </p>
+      <div className="not-prose grid gap-px overflow-hidden rounded-panel border border-line bg-line sm:grid-cols-2">
+        {CONTACTS.map((c) => (
+          <div key={c.email} className="flex flex-col bg-surface p-6 sm:p-7">
+            <p className="text-small font-semibold text-fg">{c.title}</p>
+            <p className="mt-2 flex-1 text-small text-fg-muted">{c.desc}</p>
+            <a
+              href={`mailto:${c.email}`}
+              className="mt-6 text-h4 text-fg underline decoration-line-control decoration-1 underline-offset-4 hover:decoration-fg"
+            >
+              {c.email}
+            </a>
+            <div className="mt-4">
+              <CopyButton text={c.email} label="Salin email" />
             </div>
           </div>
-          <div className="mt-4 flex items-center gap-3">
-            <code className="rounded-lg bg-neutral-100 px-3 py-2 font-mono text-sm font-semibold text-black">
-              dpo@kahade.id
-            </code>
-            <CopyButton text="dpo@kahade.id" label="Salin email" />
-          </div>
-        </Card>
+        ))}
       </div>
       <h2>Waktu respons</h2>
       <p>

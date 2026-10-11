@@ -1,7 +1,7 @@
 "use client";
 
 import { WarningCircle } from "@phosphor-icons/react/dist/ssr";
-import { Button, EmptyState } from "@kahade/ui";
+import { Button, Container, EmptyState } from "@kahade/ui";
 
 /**
  * Error boundary global: pesan ramah Bahasa Indonesia + tombol coba lagi.
@@ -15,7 +15,7 @@ export default function Error({
   reset: () => void;
 }) {
   return (
-    <div className="mx-auto flex min-h-[60vh] w-full max-w-5xl flex-1 items-center justify-center px-5">
+    <Container className="flex min-h-[60vh] items-center justify-center py-16">
       <EmptyState
         icon={WarningCircle}
         title="Terjadi kesalahan"
@@ -26,6 +26,6 @@ export default function Error({
           </Button>
         }
       />
-    </div>
+    </Container>
   );
 }

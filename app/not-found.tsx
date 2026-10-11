@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { MagnifyingGlass } from "@phosphor-icons/react/dist/ssr";
-import { ButtonLink, EmptyState } from "@kahade/ui";
+import { ButtonLink, Container, EmptyState } from "@kahade/ui";
 
 export const metadata: Metadata = {
   title: "Halaman tidak ditemukan",
@@ -17,14 +17,14 @@ export const metadata: Metadata = {
  */
 export default function NotFound() {
   return (
-    <div className="mx-auto flex w-full max-w-3xl flex-1 items-center justify-center px-5 py-16">
+    <Container className="flex min-h-[60vh] items-center justify-center py-16">
       <EmptyState
         icon={MagnifyingGlass}
         headingLevel={1}
         title="Halaman tidak ditemukan"
         description="Alamat yang Anda tuju tidak ada atau sudah dipindahkan."
-        action={<ButtonLink href="/">Kembali ke Legalitas</ButtonLink>}
+        action={<ButtonLink href="/">Lihat semua dokumen</ButtonLink>}
       />
-    </div>
+    </Container>
   );
 }

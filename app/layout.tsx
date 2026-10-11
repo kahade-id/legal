@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
+import Link from "next/link";
+import { SiteFooter } from "@kahade/ui";
+import { Header } from "@/components/site/Header";
 
 const GOOGLE_FONTS_URL =
   "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap";
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
     // semua halaman mewarisi OG homepage (duplikat).
     type: "website",
     locale: "id_ID",
-    siteName: "Legalitas Kahade",
+    siteName: "Kahade Legal",
   },
 };
 
@@ -62,7 +63,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id">
+    <html lang="id" data-scroll-behavior="smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -77,14 +78,18 @@ export default function RootLayout({
         />
       </head>
       <body className="flex min-h-screen flex-col">
-        <a href="#konten-utama" className="skip-link">
+        <a href="#konten-utama" className="kh-skip-link">
           Lewati ke konten utama
         </a>
-        <SiteHeader />
-        <main id="konten-utama" tabIndex={-1} className="flex-1">
+        <Header />
+        <main id="konten-utama" tabIndex={-1} className="flex-1 outline-none">
           {children}
         </main>
-        <SiteFooter />
+        <SiteFooter
+          site="legal"
+          linkAs={Link}
+          note="Dokumen di situs ini akan ditinjau ulang oleh penasihat hukum sebelum peluncuran."
+        />
       </body>
     </html>
   );
