@@ -1,11 +1,9 @@
 import type { Metadata, Viewport } from "next";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import { SiteFooter } from "@kahade/ui";
 import { Header } from "@/components/site/Header";
-
-const GOOGLE_FONTS_URL =
-  "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap";
 
 const ORG_JSON_LD = {
   "@context": "https://schema.org",
@@ -26,6 +24,15 @@ const ORG_JSON_LD = {
     "https://artikel.kahade.id",
   ],
 };
+
+// Plus Jakarta Sans self-hosted via next/font: tanpa CSS pihak ketiga yang
+// memblokir render. Variabel dipasang di <html> agar token --font-sans di
+// :root ikut terisi (memasangnya di <body> membuat font jatuh ke fallback).
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -63,15 +70,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id" data-scroll-behavior="smooth">
+    <html lang="id" className={jakarta.variable} data-scroll-behavior="smooth">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link href={GOOGLE_FONTS_URL} rel="stylesheet" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_JSON_LD) }}
