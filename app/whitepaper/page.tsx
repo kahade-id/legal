@@ -38,26 +38,23 @@ export default function WhitepaperPage() {
     <DocShell
       title="Whitepaper Kahade"
       description="Dokumen resmi visi, model bisnis, dan rencana Kahade — versi 1.0, Oktober 2026, diterbitkan PT Kawal Hak Dengan Aman."
+      actions={<DownloadButton />}
     >
-      <div className="mb-8">
-        <DownloadButton />
-        <p className="mt-3 text-sm text-neutral-500">
-          Whitepaper adalah sumber kebenaran tunggal untuk semua produk dan
-          bahasa Kahade.
-        </p>
-      </div>
+      <p>
+        Whitepaper adalah sumber kebenaran tunggal untuk semua produk dan
+        bahasa Kahade. Ringkasan setiap bab tersedia di bawah; versi lengkap
+        dapat diunduh dalam format PDF.
+      </p>
       <h2>Ringkasan 17 bab</h2>
       <Accordion
         items={CHAPTERS.map(([title, desc], i) => ({
           id: `bab-${i + 1}`,
           title,
-          content: <p className="!mb-0">{desc}</p>,
+          content: desc,
         }))}
       />
-      <p className="mt-8">
-        <Link href="/tentang">
-          Baca juga: Tentang Kahade
-        </Link>
+      <p>
+        Baca juga: <Link href="/tentang">Tentang Kahade</Link>.
       </p>
     </DocShell>
   );
